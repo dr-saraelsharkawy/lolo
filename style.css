@@ -81,7 +81,11 @@ h1 em, h2 em { color: var(--pink-deep); font-weight: 500; }
 .photo-frame { position: relative; padding: 12px 12px 35px; border-radius: 5px; background: #f9e3e9; box-shadow: var(--shadow); transform: rotate(-1.5deg); transition: transform .25s; min-height: 245px; }
 .memory-card:nth-child(2) .photo-frame { background: #eee7f7; transform: rotate(2deg); }
 .memory-card:nth-child(3) .photo-frame { background: #f8edcf; transform: rotate(-2deg); }
-.photo-frame:hover { transform: rotate(0) translateY(-5px); }
+.memory-card:hover .photo-frame {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: 0 28px 70px rgba(137, 81, 103, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 .photo-frame img { width: 100%; height: 220px; object-fit: cover; display: block; border-radius: 2px; }
 .memory-tall .photo-frame img { height: 300px; }
 .photo-placeholder { display: none; height: 220px; align-items: center; justify-content: center; flex-direction: column; text-align: center; gap: 8px; color: #986d7d; background: rgba(255,255,255,.45); padding: 10px; }
