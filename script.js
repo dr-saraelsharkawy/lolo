@@ -74,3 +74,45 @@ document.getElementById("wish-button").addEventListener("click", () => {
 });
 
 setInterval(makeFloatingHeart, 1800);
+
+
+const birthdayMusic = document.getElementById("birthday-music");
+const musicToggle = document.getElementById("music-toggle");
+const musicStatus = document.getElementById("music-status");
+
+async function toggleBirthdayMusic() {
+  if (birthdayMusic.paused) {
+    try {
+      await birthdayMusic.play();
+      musicToggle.classList.add("playing");
+      musicToggle.textContent = "♫";
+      musicToggle.setAttribute("aria-label", "Pause birthday music");
+      musicStatus.textContent = "Now playing ♡";
+    } catch (error) {
+      musicStatus.textContent = "Couldn't play music — check the file";
+      console.error("Birthday music playback failed:", error);
+    }
+  } else {
+    birthdayMusic.pause();
+    musicToggle.classList.remove("playing");
+    musicToggle.textContent = "♫";
+    musicToggle.setAttribute("aria-label", "Play birthday music");
+    musicStatus.textContent = "Paused ♡";
+  }
+}
+
+musicToggle.addEventListener("click", toggleBirthdayMusic);
+
+openButton.addEventListener("click", async () => {
+  if (birthdayMusic.paused) {
+    try {
+      await birthdayMusic.play();
+      musicToggle.classList.add("playing");
+      musicToggle.setAttribute("aria-label", "Pause birthday music");
+      musicStatus.textContent = "Now playing ♡";
+    } catch (error) {
+      musicStatus.textContent = "Tap ♫ to play music";
+    }
+  }
+});
+
