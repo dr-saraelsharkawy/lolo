@@ -3,8 +3,8 @@
   Edit the name, signature, message, captions, and photo filenames below.
 */
 const birthdaySettings = {
-  friendName: "sunshine",
-  yourName: "your friend",
+  friendName: "Alaa",
+  yourName: "Sara",
   pageTitle: "A Little Birthday Magic ♡",
   memories: [
     { caption: "The moments that make me smile every time." },
